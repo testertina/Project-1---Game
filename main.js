@@ -26,14 +26,33 @@ $(function() {
   			// Asteroids need to fly across screen
 
   			// $("#a1").css("visibility", "hidden");
-  			$("#a2").css("visibility", "hidden");
-  			$("#a3").css("visibility", "hidden");
-  			$("#a4").css("visibility", "hidden");
-  			$("#a5").css("visibility", "hidden");
-  			$("#a6").css("visibility", "hidden");
+  			// $("#a2").css("visibility", "hidden");
+  			// $("#a3").css("visibility", "hidden");
+  			// $("#a4").css("visibility", "hidden");
+  			// $("#a5").css("visibility", "hidden");
+  			// $("#a6").css("visibility", "hidden");
 
 
-  			$("#a1").animate({bottom:"800px"}, "slow");
+  			move("#a1");
+  			clickCheck("#a1", "#a2");
+  			clickCheck("#a2", "#a3");
+  			clickCheck("#a3", "#a4");
+  			clickCheck("#a4", "#a5");
+  			clickCheck("#a5", "#a6");
+
+  			function move (x) {
+	  			$(x).animate({bottom:"800px"}, 5000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
+
+  			function clickCheck (x, y) {
+
+	  			$(x).click(function (event) {
+	  				$(x).css("visibility", "hidden");
+	  				move(y);
+	  			})
+	  		};
   			
   			// XP bar needs to increase
 
