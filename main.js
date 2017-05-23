@@ -25,35 +25,70 @@ $(function() {
 
   			// Asteroids need to fly across screen
 
-  			// $("#a1").css("visibility", "hidden");
-  			// $("#a2").css("visibility", "hidden");
-  			// $("#a3").css("visibility", "hidden");
-  			// $("#a4").css("visibility", "hidden");
-  			// $("#a5").css("visibility", "hidden");
-  			// $("#a6").css("visibility", "hidden");
+  			$("#a1").css("visibility", "hidden");
+  			$("#a2").css("visibility", "hidden");
+  			$("#a3").css("visibility", "hidden");
+  			$("#a4").css("visibility", "hidden");
+  			$("#a5").css("visibility", "hidden");
+  			$("#a6").css("visibility", "hidden");
 
-
+  			
   			move("#a1");
-  			clickCheck("#a1", "#a2");
-  			clickCheck("#a2", "#a3");
-  			clickCheck("#a3", "#a4");
-  			clickCheck("#a4", "#a5");
-  			clickCheck("#a5", "#a6");
+  			// clickCheck("#a1", "#a2");
+  			// clickCheck("#a2", "#a3");
+  			// clickCheck("#a3", "#a4");
+  			// clickCheck("#a4", "#a5");
+  			// clickCheck("#a5", "#a6");
+  			// final('#a6');
+
 
   			function move (x) {
-	  			$(x).animate({bottom:"800px"}, 5000, "linear", function () {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({ top: 200, left: 200}).animate({top:"800px"}, 10000, "linear", function () {
 	  				$(x).css("visibility", "hidden");
 	  			});
   			};
 
-  			function clickCheck (x, y) {
+  			// function move2 (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({ top: 400, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
+	  		// 		$(x).css("visibility", "hidden");
+	  		// 	});
+  			// };
 
-	  			$(x).click(function (event) {
-	  				$(x).css("visibility", "hidden");
-	  				move(y);
-	  			})
-	  		};
+  			// function move3 (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({ top: 400, left: 200}).animate({right:"400px"}, 5000, "linear", function () {
+	  		// 		$(x).css("visibility", "hidden");
+	  		// 	});
+  			// };
+
+
+  			// function clickCheck (x, y) {
+
+	  		// 	$(x).click(function (event) {
+	  		// 		$(x).css("visibility", "hidden");
+	  		// 		var choice = Math.floor(Math.random() * 3);
+
+	  		// 		if (choice === 0) {
+	  		// 			move(y);
+	  		// 		} else if (choice === 1) {
+	  		// 			move2(y);
+	  		// 		}	else {
+	  		// 			move3(y);
+	  		// 		}
+
+	  		// 	});
+	  		// };
+
+	  		// function final (z) {
+	  		// 	$(z).click(function (event) {
+	  		// 		$(z).css("visibility", "hidden");
+	  		// 	});
+	  		// };
   			
+
+
   			// XP bar needs to increase
 
   			// Points bar needs to increase
