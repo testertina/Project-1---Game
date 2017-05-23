@@ -98,7 +98,12 @@ ul {
 img {
 	width: 150px;
 	height: 150px;
+	position: relative;
 
+}
+
+.rocks {
+	position: absolute;
 }
 
 #instructions {

@@ -25,12 +25,15 @@ $(function() {
 
   			// Asteroids need to fly across screen
 
-  			$("#a1").css("visibility", "hidden");
+  			// $("#a1").css("visibility", "hidden");
   			$("#a2").css("visibility", "hidden");
   			$("#a3").css("visibility", "hidden");
   			$("#a4").css("visibility", "hidden");
   			$("#a5").css("visibility", "hidden");
   			$("#a6").css("visibility", "hidden");
+
+
+  			$("#a1").animate({bottom:"800px"}, "slow");
   			
   			// XP bar needs to increase
 
