@@ -2,24 +2,24 @@ body {
 	background-image: url("space.jpg");
 	background-width: 100%;
 	background-height: 100%;
-	
+	text-align: center;
+
 }
 
 #title {
 	color: white;
 	font-family: Courier New;
 	font-size: 80px;
-	text-align: center;
-
+	
 
 }
 
 #homepage {
-/*	background-color: #333333;
+	/*background-color: #333333;
 	width: 400px;
 	height: 400px;
 	margin: 0px 0px 0px 500px;*/
-
+	text-align: center;
 }
 
 ul {
@@ -27,25 +27,72 @@ ul {
 	color: white;
 	font-size: 40px;
 	font-family: Courier New;
-	text-align: center;
 	margin-top: 40px;
 }
 
-.button {
+#beginGame {
 	width: 400px;
-	height: 100px;
+	height: 50px;
 	margin: 0px 0px 0px 475px;
+	background-color: grey;
+	border: 5px;
+	border-color: black;
+	text-align: center;
 
 }
 
-#gamepage {
-
-}
-
-#instructions {
+#howToPlay {
+	width: 400px;
+	height: 50px;
+	margin: 10px 0px 0px 475px;
+	background-color: grey;
+	border: 10px;
+	border-color: black;
+	text-align: center;
 
 }
 
 #leaderboard {
+	width: 400px;
+	height: 50px;
+	margin: 10px 0px 0px 475px;
+	background-color: grey;
+	border: 10px;
+	border-color: black;
+	text-align: center;
+
+}
+
+
+#gamepage {
+	width: 800px;
+	height: 800px;
+	margin: 0px 0px 0px 300px;
+	background-color: grey;
+	border: 10px;
+	border-color: black;
+	text-align: center;
+
+}
+
+#instructions {
+	width: 800px;
+	height: 800px;
+	margin: -820px 0px 0px 300px;
+	background-color: grey;
+	border: 10px;
+	border-color: black;
+	text-align: center;
+
+}
+
+#scoreboard {
+	width: 800px;
+	height: 800px;
+	margin: -840px 0px 0px 300px;
+	background-color: grey;
+	border: 10px;
+	border-color: black;
+	text-align: center;
 
 }
