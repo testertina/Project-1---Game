@@ -90,6 +90,11 @@ ul {
 
 }
 
+#ship {
+	font-size: 80px;
+	margin: 550px 0px 0px 0px;
+}
+
 #instructions {
 	width: 800px;
 	height: 800px;
