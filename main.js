@@ -45,99 +45,130 @@ $(function() {
   			function move (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 150, left: 210}).animate({top:"200px"}, 10000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function move2 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 400, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function move3 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 500, left: 1050}).animate({left:"0px"}, 5000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function move4 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 150, left: 410}).animate({top:"200px"}, 10000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function move5 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 600, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function move6 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 5000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function move7 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 150, left: 830}).animate({top:"200px"}, 10000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function move8 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 550, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function move9 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 700, left: 1050}).animate({left:"450px"}, 5000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function move10 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 5000, "linear", function () {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).remove();
+	  				alert("GAME OVER!");
+	  				return "Game Over!";
 	  			});
   			};
 
   			function clickCheck (x, y) {
 
 	  			$(x).click(function (event) {
-	  				$(x).css("visibility", "hidden");
+	  				$(x).stop().remove();
 	  				var choice = Math.floor(Math.random() * 10);
+
 
 	  				if (choice === 0) {
 	  					move(y);
+	  					return choice;
 	  				} else if (choice === 1) {
 	  					move2(y);
+	  					return choice;
 	  				} else if (choice === 2) {
 	  					move3(y);
+	  					return choice;
 	  				} else if (choice === 3) {
 	  					move4(y);
+	  					return choice;
 	  				} else if (choice === 4) {
 	  					move5(y);
+	  					return choice;
 	  				} else if (choice === 5) {
 	  					move6(y);
+	  					return choice;
 	  				} else if (choice === 6) {
 	  					move7(y);
+	  					return choice;
 	  				} else if (choice === 7) {
 	  					move8(y);
+	  					return choice;
 	  				} else if (choice === 8) {
 	  					move9(y);
+	  					return choice;
 	  				} else {
 	  					move10(y);
+	  					return choice;
 	  				} 
 
 	  			});
@@ -145,7 +176,9 @@ $(function() {
 
 	  		function final (z) {
 	  			$(z).click(function (event) {
-	  				$(z).css("visibility", "hidden");
+	  				$(z).stop().remove();
+	  				alert("Well done you won!");
+	  				return "You've won!";
 	  			});
 	  		};
   			
