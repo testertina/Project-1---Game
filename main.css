@@ -65,13 +65,28 @@ ul {
 
 
 #gamepage {
-	width: 800px;
-	height: 800px;
-	margin: 0px 0px 0px 300px;
-	background-color: grey;
+	width: 1000px;
+	height: 700px;
+	margin-left: 200px;
+	background-image: url("https://media.giphy.com/media/9bTjZrytydVRK/giphy.gif?response_id=592418bf9e04594a78220606");
+	background-size: cover;
 	border: 10px;
 	border-color: black;
 	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-family: Courier New;
+
+}
+
+#quit {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-family: Courier New;
+	border-width: 2px;
+	border-color: black;
+	background-color: grey;	
 
 }
 
@@ -83,6 +98,9 @@ ul {
 	border: 10px;
 	border-color: black;
 	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-family: Courier New;
 
 }
 
@@ -94,5 +112,8 @@ ul {
 	border: 10px;
 	border-color: black;
 	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-family: Courier New;
 
 }
