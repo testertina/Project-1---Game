@@ -34,58 +34,120 @@ $(function() {
 
   			
   			move("#a1");
-  			// clickCheck("#a1", "#a2");
-  			// clickCheck("#a2", "#a3");
-  			// clickCheck("#a3", "#a4");
-  			// clickCheck("#a4", "#a5");
-  			// clickCheck("#a5", "#a6");
-  			// final('#a6');
+  			clickCheck("#a1", "#a2");
+  			clickCheck("#a2", "#a3");
+  			clickCheck("#a3", "#a4");
+  			clickCheck("#a4", "#a5");
+  			clickCheck("#a5", "#a6");
+  			final('#a6');
 
 
   			function move (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({ top: 200, left: 200}).animate({top:"800px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 150, left: 210}).animate({top:"200px"}, 10000, "linear", function () {
 	  				$(x).css("visibility", "hidden");
 	  			});
   			};
 
-  			// function move2 (x) {
-  			// 	$(x).css("visibility", "visible");
-	  		// 	$(x).offset({ top: 400, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
-	  		// 		$(x).css("visibility", "hidden");
-	  		// 	});
-  			// };
+  			function move2 (x) {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({top: 400, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
 
-  			// function move3 (x) {
-  			// 	$(x).css("visibility", "visible");
-	  		// 	$(x).offset({ top: 400, left: 200}).animate({right:"400px"}, 5000, "linear", function () {
-	  		// 		$(x).css("visibility", "hidden");
-	  		// 	});
-  			// };
+  			function move3 (x) {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({top: 500, left: 1050}).animate({left:"0px"}, 5000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
 
+  			function move4 (x) {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({top: 150, left: 410}).animate({top:"200px"}, 10000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
 
-  			// function clickCheck (x, y) {
+  			function move5 (x) {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({top: 600, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
 
-	  		// 	$(x).click(function (event) {
-	  		// 		$(x).css("visibility", "hidden");
-	  		// 		var choice = Math.floor(Math.random() * 3);
+  			function move6 (x) {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 5000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
 
-	  		// 		if (choice === 0) {
-	  		// 			move(y);
-	  		// 		} else if (choice === 1) {
-	  		// 			move2(y);
-	  		// 		}	else {
-	  		// 			move3(y);
-	  		// 		}
+  			function move7 (x) {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({top: 150, left: 830}).animate({top:"200px"}, 10000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
 
-	  		// 	});
-	  		// };
+  			function move8 (x) {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({top: 550, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
 
-	  		// function final (z) {
-	  		// 	$(z).click(function (event) {
-	  		// 		$(z).css("visibility", "hidden");
-	  		// 	});
-	  		// };
+  			function move9 (x) {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({top: 700, left: 1050}).animate({left:"450px"}, 5000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
+
+  			function move10 (x) {
+  				$(x).css("visibility", "visible");
+	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 5000, "linear", function () {
+	  				$(x).css("visibility", "hidden");
+	  			});
+  			};
+
+  			function clickCheck (x, y) {
+
+	  			$(x).click(function (event) {
+	  				$(x).css("visibility", "hidden");
+	  				var choice = Math.floor(Math.random() * 10);
+
+	  				if (choice === 0) {
+	  					move(y);
+	  				} else if (choice === 1) {
+	  					move2(y);
+	  				} else if (choice === 2) {
+	  					move3(y);
+	  				} else if (choice === 3) {
+	  					move4(y);
+	  				} else if (choice === 4) {
+	  					move5(y);
+	  				} else if (choice === 5) {
+	  					move6(y);
+	  				} else if (choice === 6) {
+	  					move7(y);
+	  				} else if (choice === 7) {
+	  					move8(y);
+	  				} else if (choice === 8) {
+	  					move9(y);
+	  				} else {
+	  					move10(y);
+	  				} 
+
+	  			});
+	  		};
+
+	  		function final (z) {
+	  			$(z).click(function (event) {
+	  				$(z).css("visibility", "hidden");
+	  			});
+	  		};
   			
 
 
