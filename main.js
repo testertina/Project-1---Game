@@ -55,7 +55,7 @@ $(function() {
   			$("#point5").css("visibility", "hidden");
   			$("#point6").css("visibility", "hidden");
   			
-  			move10("#a1");
+  			move("#a1");
   			clickCheck("#a1", "#point1", "#a2");
   			clickCheck("#a2", "#point2", "#a3");
   			clickCheck("#a3", "#point3", "#a4");
@@ -66,7 +66,7 @@ $(function() {
 
   			function move (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 150, left: 710}).animate({top:"-180px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 200, left: 710}).animate({top:"-180px"}, 10000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 
 	  				setTimeout(function(){
@@ -103,7 +103,7 @@ $(function() {
 
   			function move4 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 150, left: 410}).animate({top:"-125px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 250, left: 300}).animate({top:"-125px"}, 10000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function(){
 		  				$(x).remove();
