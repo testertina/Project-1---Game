@@ -190,7 +190,7 @@ img {
 #instructions {
 	width: 800px;
 	height: 800px;
-	margin: -820px 0px 0px 300px;
+	margin: -730px 0px 0px 300px;
 	background-color: grey;
 	border: 10px;
 	border-color: black;
@@ -201,10 +201,35 @@ img {
 
 }
 
+
+#instructions li {
+	list-style-type: circle;
+
+	text-align: justify;
+	
+	color: white;
+	font-size: 30px;
+	font-family: "Courier New";
+	margin: 0px 20px 30px 0px;
+	
+}
+
+#home {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-family: "Courier New";
+	border-width: 2px;
+	border-color: white;
+	background-color: grey;	
+	margin: 50px 0px 0px 0px;
+	height: 30px;
+}
+
 #scoreboard {
 	width: 800px;
 	height: 800px;
-	margin: -840px 0px 0px 300px;
+	margin: -820px 0px 0px 300px;
 	background-color: grey;
 	border: 10px;
 	border-color: black;
