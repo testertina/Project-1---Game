@@ -27,7 +27,7 @@ $(function() {
  				if (degAngle < 0){
    					 degAngle = degAngle + 90;
 				}
-				
+
 	  			$("#ship").css({'transform' : 'rotate('+ (degAngle) +'deg)'});
 	  			
 	  		
@@ -55,7 +55,7 @@ $(function() {
   			$("#point5").css("visibility", "hidden");
   			$("#point6").css("visibility", "hidden");
   			
-  			move("#a1");
+  			move10("#a1");
   			clickCheck("#a1", "#point1", "#a2");
   			clickCheck("#a2", "#point2", "#a3");
   			clickCheck("#a3", "#point3", "#a4");
@@ -66,99 +66,136 @@ $(function() {
 
   			function move (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 150, left: 710}).animate({top:"200px"}, 10000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
+	  			$(x).offset({top: 150, left: 710}).animate({top:"-180px"}, 10000, "linear", function () {
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
 	  			});
   			};
 
   			function move2 (x) {
   				$(x).css("visibility", "visible");
 	  			$(x).offset({top: 400, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
 	  			});
   			};
 
   			function move3 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 500, left: 1050}).animate({left:"0px"}, 5000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
+	  			$(x).offset({top: 500, left: 1050}).animate({left:"0px"}, 10000, "linear", function () {
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
 	  			});
   			};
 
   			function move4 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 150, left: 410}).animate({top:"200px"}, 10000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
+	  			$(x).offset({top: 150, left: 410}).animate({top:"-125px"}, 10000, "linear", function () {
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
 	  			});
   			};
 
   			function move5 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 600, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
-	  			});
+	  			$(x).offset({top: 600, left: 210}).animate({left:"850px"}, 10000, "linear", function () {
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
+		  		});
   			};
 
   			function move6 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 5000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
+	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 10000, "linear", function () {
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
 	  			});
   			};
 
   			function move7 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 150, left: 830}).animate({top:"200px"}, 10000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
+	  			$(x).offset({top: 150, left: 830}).animate({top:"-125px"}, 10000, "linear", function () {
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
 	  			});
   			};
 
   			function move8 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 550, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
+	  			$(x).offset({top: 550, left: 210}).animate({left:"850px"}, 10000, "linear", function () {
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
 	  			});
   			};
 
   			function move9 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 700, left: 1050}).animate({left:"450px"}, 5000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
+	  			$(x).offset({top: 700, left: 1050}).animate({left:"450px"}, 10000, "linear", function () {
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
 	  			});
   			};
 
   			function move10 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 5000, "linear", function () {
-	  				$(x).remove();
-	  				alert("GAME OVER!");
-	  				return "Game Over!";
+	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 10000, "linear", function () {
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  				setTimeout(function(){
+		  				$(x).remove();
+		  				alert("GAME OVER!");
+		  				return "Game Over!";
+		  			}, 1000);
 	  			});
   			};
 
   			function clickCheck (x, y, z) {
 
 	  			$(x).click(function (event) {
-	  				$(x).stop().remove();
-	  				$(y).css("visibility", "visible");
+	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+
+	  				setTimeout(function(){
+  						$(x).stop().remove();
+	  					$(y).css("visibility", "visible");
+					}, 1000);
+
+	  				
 
 	  				// var mousePos = event.pageX + ' , ' + event.pageY;
 	  				
@@ -205,9 +242,12 @@ $(function() {
 
 	  		function final (y, z) {
 	  			$(z).click(function (event) {
-	  				$(z).stop().remove();
-	  				$(y).css("visibility", "visible");
-	  				// var mousePos = event.pageX + ' , ' + event.pageY;
+	  				$(z).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+		  			setTimeout(function(){
+		  				$(y).css("visibility", "visible");
+		  				$(z).stop().remove();
+		  			}, 1000);
+	  				
 	  				alert("Well done you won!");
 	  				return "You've won!";
 	  			});
