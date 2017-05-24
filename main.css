@@ -89,6 +89,77 @@ ul {
 	background-color: grey;	
 
 }
+#label {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	font-family: "Courier New";
+	
+
+}
+#points {
+	width: 240px;
+	height: 30px;
+	margin: -50px 0px 0px 750px;
+	background-color: grey;
+	border-style: solid;
+	border: 10px;
+	border-color: black;
+	
+	
+}
+
+#point1 {
+	width: 40px;
+	height: 30px;
+	margin: 0px 0px 0px 0px;
+	background-color: red;
+	display: absolute;
+
+	
+	
+}
+
+#point2 {
+	width: 40px;
+	height: 30px;
+	margin: -30px 0px 0px 40px;
+	background-color: red;
+	display: absolute;	
+	
+}
+
+#point3 {
+	width: 40px;
+	height: 30px;
+	margin: -30px 0px 0px 80px;
+	background-color: red;
+	display: absolute;	
+}
+
+#point4 {
+	width: 40px;
+	height: 30px;
+	margin: -30px 0px 0px 120px;
+	background-color: red;
+	display: absolute;	
+}
+
+#point5 {
+	width: 40px;
+	height: 30px;
+	margin: -30px 0px 0px 160px;
+	background-color: red;
+	display: absolute;	
+}
+
+#point6 {
+	width: 40px;
+	height: 30px;
+	margin: -30px 0px 0px 200px;
+	background-color: red;
+	display: absolute;	
+}
 
 #ship {
 	font-size: 80px;

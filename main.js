@@ -22,6 +22,12 @@ $(function() {
 
   			// Spaceship needs to appear and rotate with cursor.
 
+  			// To determine ships coordinates.
+  			// $("#ship").click(function (event) {
+  			// 	var ship = event.pageX + ' , ' + event.pageY;
+  			// 	console.log(ship);
+  				
+  			// })
 
   			// Asteroids need to fly across screen
 
@@ -32,14 +38,20 @@ $(function() {
   			$("#a5").css("visibility", "hidden");
   			$("#a6").css("visibility", "hidden");
 
+  			$("#point1").css("visibility", "hidden");
+  			$("#point2").css("visibility", "hidden");
+  			$("#point3").css("visibility", "hidden");
+  			$("#point4").css("visibility", "hidden");
+  			$("#point5").css("visibility", "hidden");
+  			$("#point6").css("visibility", "hidden");
   			
   			move("#a1");
-  			clickCheck("#a1", "#a2");
-  			clickCheck("#a2", "#a3");
-  			clickCheck("#a3", "#a4");
-  			clickCheck("#a4", "#a5");
-  			clickCheck("#a5", "#a6");
-  			final('#a6');
+  			clickCheck("#a1", "#point1", "#a2");
+  			clickCheck("#a2", "#point2", "#a3");
+  			clickCheck("#a3", "#point3", "#a4");
+  			clickCheck("#a4", "#point4", "#a5");
+  			clickCheck("#a5", "#point5", "#a6");
+  			final("#point6", '#a6');
 
 
   			function move (x) {
@@ -132,51 +144,59 @@ $(function() {
 	  			});
   			};
 
-  			function clickCheck (x, y) {
+  			function clickCheck (x, y, z) {
 
 	  			$(x).click(function (event) {
 	  				$(x).stop().remove();
+	  				$(y).css("visibility", "visible");
+	  				var mousePos = event.pageX + ' , ' + event.pageY;
+	  				
+	  				var angle = Math.atan(event.pageY, event.pageX);
+	  				$("#ship").css({'transform' : 'rotate('+ 180-angle +'deg)'});
+
 	  				var choice = Math.floor(Math.random() * 10);
 
 
 	  				if (choice === 0) {
-	  					move(y);
+	  					move(z);
 	  					return choice;
 	  				} else if (choice === 1) {
-	  					move2(y);
+	  					move2(z);
 	  					return choice;
 	  				} else if (choice === 2) {
-	  					move3(y);
+	  					move3(z);
 	  					return choice;
 	  				} else if (choice === 3) {
-	  					move4(y);
+	  					move4(z);
 	  					return choice;
 	  				} else if (choice === 4) {
-	  					move5(y);
+	  					move5(z);
 	  					return choice;
 	  				} else if (choice === 5) {
-	  					move6(y);
+	  					move6(z);
 	  					return choice;
 	  				} else if (choice === 6) {
-	  					move7(y);
+	  					move7(z);
 	  					return choice;
 	  				} else if (choice === 7) {
-	  					move8(y);
+	  					move8(z);
 	  					return choice;
 	  				} else if (choice === 8) {
-	  					move9(y);
+	  					move9(z);
 	  					return choice;
 	  				} else {
-	  					move10(y);
+	  					move10(z);
 	  					return choice;
 	  				} 
 
 	  			});
 	  		};
 
-	  		function final (z) {
+	  		function final (y, z) {
 	  			$(z).click(function (event) {
 	  				$(z).stop().remove();
+	  				$(y).css("visibility", "visible");
+	  				var mousePos = event.pageX + ' , ' + event.pageY;
 	  				alert("Well done you won!");
 	  				return "You've won!";
 	  			});
