@@ -56,7 +56,7 @@ $(function() {
 
   			function move (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 150, left: 210}).animate({top:"200px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 150, left: 710}).animate({top:"200px"}, 10000, "linear", function () {
 	  				$(x).remove();
 	  				alert("GAME OVER!");
 	  				return "Game Over!";
