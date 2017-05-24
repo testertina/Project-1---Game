@@ -13,12 +13,7 @@ $(function() {
   	
   		$("#homepage").hide("slow", function () {
   			$("#gamepage").css("visibility", "visible");
-  			// Make a quit button which returns user back to homepage when clicked.
-  			$("#quit").click(function (event) {
-  				$("#gamepage").css("visibility", "hidden");
-  				$("#homepage").show("slow", function () {
-  				});	
-  			});
+  		
 
   			// Spaceship needs to appear and rotate with cursor.
 
@@ -149,6 +144,7 @@ $(function() {
 	  			$(x).click(function (event) {
 	  				$(x).stop().remove();
 	  				$(y).css("visibility", "visible");
+
 	  				var mousePos = event.pageX + ' , ' + event.pageY;
 	  				
 	  				var angle = Math.atan(event.pageY, event.pageX);
@@ -202,7 +198,10 @@ $(function() {
 	  			});
 	  		};
   			
-
+	  		// Make a quit button which returns user back to homepage when clicked.
+  			$("#quit").click(function (event) {
+  				location.reload();
+  			});
 
   			// XP bar needs to increase
 
