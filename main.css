@@ -176,6 +176,16 @@ p {
 	margin: 550px 0px 0px 0px;
 }
 
+#beam {
+	width: 4px;
+	height: 650px;
+	background-color: red;
+	margin: -755px 0px 0px 498px;
+	border-style: solid;
+	border-radius: 5px; 
+
+}
+
 img {
 	width: 150px;
 	height: 150px;
