@@ -33,7 +33,7 @@ $(function() {
 	  		
 			});
 
-			$("#beam").fadeOut();
+			$("#beam").hide();
   			// To determine ships coordinates.
   			// $("#gamepage").click(function (event) {
   			// 	var ship = event.pageX + ' , ' + event.pageY;
@@ -190,7 +190,7 @@ $(function() {
   			function clickCheck (x, y, z) {
 
 	  			$(x).click(function (event) {
-	  				beam();
+	  				beam("#beam");
 		  			$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  			
 
@@ -246,6 +246,7 @@ $(function() {
 
 	  		function final (y, z) {
 	  			$(z).click(function (event) {
+	  				beam("#beam");
 	  				$(z).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 		  			setTimeout(function(){
 		  				$(y).css("visibility", "visible");
@@ -263,9 +264,9 @@ $(function() {
   			});
 
 
-  			function beam () {
-  				$("#beam").fadeIn();
-  				$("#beam").fadeOut();
+  			function beam (x) {
+  				$(x).fadeIn(100);
+  				$(x).fadeOut(100);
   			}
   			// XP bar needs to increase
 
