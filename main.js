@@ -18,18 +18,22 @@ $(function() {
   			// Spaceship needs to appear and rotate with cursor.
   			$("#gamepage").mousemove(function(event) {
   				
-  				var yCo = event.pageY;
-  				var xCo = event.pageX;
-  				console.log(yCo);
-  				console.log(xCo);
- 				var radAngle = Math.atan2(parseFloat(event.pageY), parseFloat(event.pageX));
- 				console.log(radAngle);
- 				var degAngle = -1 * (parseFloat(radAngle) * (180 / Math.PI));
- 				console.log(degAngle);
-	  			$("#ship").css({'transform' : 'rotate('+ degAngle +'deg)'});
+  				console.log(event.pageY);
+  				console.log(event.pageX);
+  				
+ 				var radAngle = (Math.atan2(parseFloat(event.pageY) - 900, parseFloat(event.pageX)- 580));
+ 				var degAngle = radAngle * (360 / (2 * Math.PI));
+ 				
+ 				if (degAngle < 0){
+   					 degAngle = degAngle + 90;
+				}
+				
+	  			$("#ship").css({'transform' : 'rotate('+ (degAngle) +'deg)'});
+	  			
+	  		
 			});
   			// To determine ships coordinates.
-  			// $("#ship").click(function (event) {
+  			// $("#gamepage").click(function (event) {
   			// 	var ship = event.pageX + ' , ' + event.pageY;
   			// 	console.log(ship);
   				
