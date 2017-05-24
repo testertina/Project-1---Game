@@ -189,7 +189,7 @@ img {
 
 #instructions {
 	width: 800px;
-	height: 800px;
+	height: 600px;
 	margin: -730px 0px 0px 300px;
 	background-color: grey;
 	border: 10px;
@@ -204,11 +204,9 @@ img {
 
 #instructions li {
 	list-style-type: circle;
-
 	text-align: justify;
-	
 	color: white;
-	font-size: 30px;
+	font-size: 20px;
 	font-family: "Courier New";
 	margin: 0px 20px 30px 0px;
 	

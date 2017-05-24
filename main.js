@@ -216,7 +216,9 @@ $(function() {
   	
   		$("#homepage").hide("slow", function () {
   			$("#instructions").css("visibility", "visible");
-  			
+  			$("#home").click(function (event) {
+  				location.reload();
+  			});
 
   		});
   	});
