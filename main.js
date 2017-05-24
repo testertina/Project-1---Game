@@ -45,24 +45,24 @@ $(function() {
   			$("#a5").css("visibility", "hidden");
   			$("#a6").css("visibility", "hidden");
 
-  			// Points need to be hidden on load.
+  			// XPs need to be hidden on load.
 
-  			$("#point1").css("visibility", "hidden");
-  			$("#point2").css("visibility", "hidden");
-  			$("#point3").css("visibility", "hidden");
-  			$("#point4").css("visibility", "hidden");
-  			$("#point5").css("visibility", "hidden");
-  			$("#point6").css("visibility", "hidden");
+  			$("#XP1").css("visibility", "hidden");
+  			$("#XP2").css("visibility", "hidden");
+  			$("#XP3").css("visibility", "hidden");
+  			$("#XP4").css("visibility", "hidden");
+  			$("#XP5").css("visibility", "hidden");
+  			$("#XP6").css("visibility", "hidden");
 
   			// Asteroids need to move across the gamepage randomly. Asteroids are called here.
   			
   			move("#a1");
-  			clickCheck("#a1", "#point1", "#a2");
-  			clickCheck("#a2", "#point2", "#a3");
-  			clickCheck("#a3", "#point3", "#a4");
-  			clickCheck("#a4", "#point4", "#a5");
-  			clickCheck("#a5", "#point5", "#a6");
-  			final("#point6", '#a6');
+  			clickCheck("#a1", "#XP1", "#a2");
+  			clickCheck("#a2", "#XP2", "#a3");
+  			clickCheck("#a3", "#XP3", "#a4");
+  			clickCheck("#a4", "#XP4", "#a5");
+  			clickCheck("#a5", "#XP5", "#a6");
+  			final("#XP6", '#a6');
 
   			// Functions to make asteroids move in the first round. Using .animate. 10 functions for random movements.
 
@@ -197,7 +197,7 @@ $(function() {
 		  			$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
   						$(x).stop().remove();
-	  					$(y).css("visibility", "visible");
+	  					$(y).css("visibility", "visible"); // XP bar needs to increase
 					}, 1000);
 
 	  				var choice = Math.floor(Math.random() * 10);
@@ -244,7 +244,7 @@ $(function() {
 	  				beam("#beam");
 	  				$(z).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 		  			setTimeout(function(){
-		  				$(y).css("visibility", "visible");
+		  				$(y).css("visibility", "visible"); // XP bar needs to increase
 		  				$(z).stop().remove();
 		  			}, 1000);
 	  				
@@ -266,13 +266,8 @@ $(function() {
   			});
 
 
-  			
-
 
   			
-  			// XP bar needs to increase
-
-  			// Points bar needs to increase
 
   			// To determine ships coordinates.
   			// $("#gamepage").click(function (event) {
@@ -299,7 +294,7 @@ $(function() {
   	});
 
 	// Click event to show leaderboard. Upon click of "leaderboard" button the leaderboard page becomes visible.
-	
+
   	$("#leaderboard").click(function (event) {
   	
   		$("#homepage").hide("slow", function () {
