@@ -267,7 +267,13 @@ $(function() {
   			function beam (x) {
   				$(x).fadeIn(100);
   				$(x).fadeOut(100);
-  			}
+  			};
+
+  			
+
+  			$("#gamepage").click(function (){
+  				beam("#beam");
+  			})
   			// XP bar needs to increase
 
   			// Points bar needs to increase
