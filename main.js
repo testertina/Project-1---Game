@@ -16,7 +16,18 @@ $(function() {
   		
 
   			// Spaceship needs to appear and rotate with cursor.
-
+  			$("#gamepage").mousemove(function(event) {
+  				
+  				var yCo = event.pageY;
+  				var xCo = event.pageX;
+  				console.log(yCo);
+  				console.log(xCo);
+ 				var radAngle = Math.atan2(parseFloat(event.pageY), parseFloat(event.pageX));
+ 				console.log(radAngle);
+ 				var degAngle = -1 * (parseFloat(radAngle) * (180 / Math.PI));
+ 				console.log(degAngle);
+	  			$("#ship").css({'transform' : 'rotate('+ degAngle +'deg)'});
+			});
   			// To determine ships coordinates.
   			// $("#ship").click(function (event) {
   			// 	var ship = event.pageX + ' , ' + event.pageY;
@@ -145,10 +156,10 @@ $(function() {
 	  				$(x).stop().remove();
 	  				$(y).css("visibility", "visible");
 
-	  				var mousePos = event.pageX + ' , ' + event.pageY;
+	  				// var mousePos = event.pageX + ' , ' + event.pageY;
 	  				
-	  				var angle = Math.atan(event.pageY, event.pageX);
-	  				$("#ship").css({'transform' : 'rotate('+ 180-angle +'deg)'});
+	  				// var angle = Math.atan(event.pageY, event.pageX);
+	  				// $("#ship").css({'transform' : 'rotate('+ 180-angle +'deg)'});
 
 	  				var choice = Math.floor(Math.random() * 10);
 
@@ -192,7 +203,7 @@ $(function() {
 	  			$(z).click(function (event) {
 	  				$(z).stop().remove();
 	  				$(y).css("visibility", "visible");
-	  				var mousePos = event.pageX + ' , ' + event.pageY;
+	  				// var mousePos = event.pageX + ' , ' + event.pageY;
 	  				alert("Well done you won!");
 	  				return "You've won!";
 	  			});
