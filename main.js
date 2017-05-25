@@ -10,9 +10,10 @@ $(function() {
 
 	// Click event to begin game. Upon click of "begin game" button the gamepage becomes visible.
 	$("#beginGame").click(function (event) {
-  	
+  		
   		$("#homepage").hide("slow", function () {
-  			$("#gamepage").css("visibility", "visible");
+  			$("#gamepage").css("visibility", "visible"); // Make gamepage visible.
+  			document.getElementById("audioBG").play(); // Play background audio.
   			var count = 0;
   			document.getElementById("pts").innerHTML = count;
   			var outcome = "";
@@ -39,7 +40,7 @@ $(function() {
 
   			// Spaceship laser beam must be hidden and called only when the user clicks.
 
-			$("#beam").hide();
+			$("#beam").css("visibility", "hidden");
 			$("#gamepage").click(function () {
   				beam("#beam");
   			})
@@ -83,7 +84,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-					outcome = "MISSION FAILED.";
+					outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 	  			});
@@ -97,7 +98,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-					outcome = "MISSION FAILED.";
+					outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 	  			});
@@ -111,7 +112,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-					outcome = "MISSION FAILED.";
+					outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 	  			});
@@ -125,7 +126,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-		  			outcome = "MISSION FAILED.";
+		  			outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 	  			});
@@ -139,7 +140,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-		  			outcome = "MISSION FAILED.";
+		  			outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 		  		});
@@ -153,7 +154,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-		  			outcome = "MISSION FAILED.";
+		  			outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 	  			});
@@ -167,7 +168,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-		  			outcome = "MISSION FAILED.";
+		  			outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 	  			});
@@ -181,7 +182,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-		  			outcome = "MISSION FAILED.";
+		  			outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 	  			});
@@ -195,7 +196,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-		  			outcome = "MISSION FAILED.";
+		  			outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 	  			});
@@ -209,7 +210,7 @@ $(function() {
 		  				$(x).remove();
 		  				return "Game Over!";
 		  			}, 1000);
-		  			outcome = "MISSION FAILED.";
+		  			outcome = "MISSION FAILED";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
 	  			});
@@ -278,9 +279,11 @@ $(function() {
 		  				addPoints(); // Points need to be updated.
 		  				$(z).stop().remove();
 		  			}, 1000);
+		  			setTimeout(function () {
 		  			outcome = "MISSION COMPLETE!";
 		  			document.getElementById("outcome").innerHTML = outcome;
 		  			$('#outcome').css("visibility", "visible");
+		  		}, 1500);
 	  				
 	  			});
 	  		};
@@ -288,6 +291,7 @@ $(function() {
 	  		// Need a function beam, which displays the laser beam when the player clicks.
 
 	  		function beam (x) {
+	  			$(x).css("visibility", "visible");
   				$(x).fadeIn(100);
   				$(x).fadeOut(100);
   			};

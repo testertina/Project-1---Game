@@ -56,6 +56,8 @@ ul {
 }
 
 #gamepage {
+	position: relative;
+
 	width: 1000px;
 	height: 700px;
 	margin-left: 200px;
@@ -180,13 +182,14 @@ p {
 #ship {
 	margin: 550px 0px 0px 0px;
 	font-size: 80px;
-	
+	position: absolute;
+	left: 50%;
 }
 
 #beam {
 	width: 4px;
 	height: 650px;
-	margin: -755px 0px 0px 498px;
+	margin: -755px 0px 0px 47px;
 	background-color: red;
 	border-style: solid;
 	border-radius: 5px; 
