@@ -193,7 +193,7 @@ $(function() {
   			};
 
   			// Function to determine random asteroid movement.
-  			
+
   			function rand (z) {
 	  			var choice = Math.floor(Math.random() * 10);
 
@@ -289,18 +289,6 @@ $(function() {
   			});
 
   		});
-  	});
-
-	// Click event to show leaderboard. Upon click of "leaderboard" button the leaderboard page becomes visible.
-
-  	$("#leaderboard").click(function (event) {
-  	
-  		$("#homepage").hide("slow", function () {
-  			$("#scoreboard").css("visibility", "visible");
-  			
-
-  		});
-
   	});
 
 
