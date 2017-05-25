@@ -13,6 +13,8 @@ $(function() {
   	
   		$("#homepage").hide("slow", function () {
   			$("#gamepage").css("visibility", "visible");
+  			var count = 0;
+  			document.getElementById("pts").innerHTML = count;
 
   			// Spaceship needs to appear and rotate with cursor.
 
@@ -196,8 +198,11 @@ $(function() {
 	  				beam("#beam");
 		  			$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
+	  					addPoints();
   						$(x).stop().remove();
-	  					$(y).css("visibility", "visible"); // XP bar needs to increase
+	  					$(y).css("visibility", "visible");
+	  					
+	  					 // XP bar needs to increase
 					}, 1000);
 
 	  				var choice = Math.floor(Math.random() * 10);
@@ -244,7 +249,8 @@ $(function() {
 	  				beam("#beam");
 	  				$(z).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 		  			setTimeout(function(){
-		  				$(y).css("visibility", "visible"); // XP bar needs to increase
+		  				$(y).css("visibility", "visible"); 
+		  				addPoints(); // XP bar needs to increase
 		  				$(z).stop().remove();
 		  			}, 1000);
 	  				
@@ -258,7 +264,12 @@ $(function() {
   				$(x).fadeOut(100);
   			};
 
-
+  			function addPoints () {
+  				count = count + 5;
+  				console.log(count);
+  				document.getElementById("pts").innerHTML = count;
+  				return count;
+  			}
 	  		// Make a quit button which returns user back to homepage and resets the game when clicked.
 
   			$("#quit").click(function (event) {
