@@ -13,7 +13,7 @@ $(function() {
   		
   		$("#homepage").hide("slow", function () {
   			$("#gamepage").css("visibility", "visible"); // Make gamepage visible.
-  			// document.getElementById("audioBG").play(); // Play background audio.
+  			document.getElementById("audioBG").play(); // Play background audio.
   			var count = 0;
   			document.getElementById("pts").innerHTML = count;
   			var outcome = "";
@@ -300,6 +300,9 @@ $(function() {
 	  			$(x).css("visibility", "visible");
   				$(x).fadeIn(100);
   				$(x).fadeOut(100);
+  				
+  				document.getElementById("audioLaser").play(); // Play laser audio.
+  				
   			};
 
   			// Function to add points when user clicks on an asteroid.
