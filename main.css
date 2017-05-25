@@ -3,6 +3,7 @@ body {
 	background-width: 100%;
 	background-height: 100%;
 	text-align: center;
+	cursor: pointer;
 
 }
 
@@ -183,14 +184,20 @@ p {
 	/*margin: 550px 0px 0px 0px;*/
 	font-size: 80px;
 	position: absolute;
-	left: 50%;
-	bottom: 0px;
+	margin: 300px 0px 0px 500px;
+
+/*	background-color: grey;
+    width: 100px;
+    height: 30px;*/
+    
+    position: absolute;
+
 }
 
 #beam {
 	width: 4px;
-	height: 650px;
-	margin: -755px 0px 0px 47px;
+	height: 350px;
+	margin: -455px 0px 0px 47px;
 	background-color: red;
 	border-style: solid;
 	border-radius: 5px; 
@@ -213,7 +220,7 @@ img {
 #outcome {
 	width: 1000px;
 	height: 320px;
-	margin: -500px 0px 0px 0px;
+	margin: 150px 0px 0px 0px;
 	background-color: grey;
 	border-width: 10px;
 	border-color: black;
@@ -221,6 +228,7 @@ img {
 	color: white;
 	font-size: 150px;
 	font-family: "Courier New";
+	position: absolute;
 }
 
 #instructions {

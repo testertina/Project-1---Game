@@ -13,7 +13,7 @@ $(function() {
   		
   		$("#homepage").hide("slow", function () {
   			$("#gamepage").css("visibility", "visible"); // Make gamepage visible.
-  			document.getElementById("audioBG").play(); // Play background audio.
+  			// document.getElementById("audioBG").play(); // Play background audio.
   			var count = 0;
   			document.getElementById("pts").innerHTML = count;
   			var outcome = "";
@@ -25,15 +25,21 @@ $(function() {
 
   			// Spaceship needs to appear and rotate with cursor.
 
-  			$("#gamepage").mousemove(function(event) {
-  				console.log(event.pageY);
-  				console.log(event.pageX);
-  				var radAngle = (Math.atan2(parseFloat(event.pageY) - 900, parseFloat(event.pageX) - 580));
- 				var degAngle = radAngle * (360 / (2 * Math.PI));
+  			var shipCenter=[$("#ship").offset().left + $("#ship").width() / 2, $("#ship").offset().top + $("#ship").height() / 2];
+
+
+  			$(document).mousemove(function(e) {
+  				// console.log(event.pageY);
+  				// console.log(event.pageX);
+  				var radAngle = Math.atan2((e.pageX - shipCenter[0]),-(e.pageY - shipCenter[1]));
+ 				var degAngle = (radAngle * (180 / (Math.PI)));
+ 				console.log(degAngle);
  				
- 				if (degAngle < 0) {
-   					 degAngle = degAngle + 90;
-				};
+ 			// 	if (45 > degAngle > 0) {
+   	// 				 degAngle = (degAngle);
+				// } else if (90 > degAngle > 45) {
+   	// 				degAngle = (degAngle * 0.5);
+				// }
 
 	  			$("#ship").css({'transform' : 'rotate('+ (degAngle) +'deg)'});
 			});
@@ -77,7 +83,7 @@ $(function() {
 
   			function move (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 200, left: 710}).animate({top:"-180px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 400, right: 200}).animate({left:"400px"}, 10000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 
 	  				setTimeout(function () {
@@ -92,7 +98,7 @@ $(function() {
 
   			function move2 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 400, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
+	  			$(x).offset({top: 700, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
@@ -106,7 +112,7 @@ $(function() {
 
   			function move3 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 500, left: 1050}).animate({left:"0px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 500, left: 1050}).animate({left:"500px"}, 10000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
@@ -120,7 +126,7 @@ $(function() {
 
   			function move4 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 250, left: 300}).animate({top:"-125px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 750, left: 300}).animate({top:"0px"}, 10000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
@@ -134,7 +140,7 @@ $(function() {
 
   			function move5 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 500, left: 210}).animate({left:"850px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 500, left: 210}).animate({left:"450px"}, 10000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
@@ -162,7 +168,7 @@ $(function() {
 
   			function move7 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 150, left: 830}).animate({top:"-125px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 850, left: 830}).animate({top:"-25px"}, 10000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
@@ -176,7 +182,7 @@ $(function() {
 
   			function move8 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 550, left: 210}).animate({left:"850px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 650, left: 210}).animate({left:"850px"}, 10000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
@@ -190,7 +196,7 @@ $(function() {
 
   			function move9 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 450, left: 1050}).animate({left:"450px"}, 10000, "linear", function () {
+	  			$(x).offset({top: 480, left: 1050}).animate({left:"500px"}, 10000, "linear", function () {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
