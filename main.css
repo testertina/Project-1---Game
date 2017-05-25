@@ -180,10 +180,11 @@ p {
 }
 
 #ship {
-	margin: 550px 0px 0px 0px;
+	/*margin: 550px 0px 0px 0px;*/
 	font-size: 80px;
 	position: absolute;
 	left: 50%;
+	bottom: 0px;
 }
 
 #beam {
@@ -193,6 +194,7 @@ p {
 	background-color: red;
 	border-style: solid;
 	border-radius: 5px; 
+	position: absolute;
 
 }
 
