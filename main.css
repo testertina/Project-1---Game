@@ -205,6 +205,19 @@ img {
 
 }
 
+#outcome {
+	width: 1000px;
+	height: 320px;
+	margin: -500px 0px 0px 0px;
+	background-color: grey;
+	border-width: 10px;
+	border-color: black;
+	text-align: center;
+	color: white;
+	font-size: 150px;
+	font-family: "Courier New";
+}
+
 #instructions {
 	width: 800px;
 	height: 600px;

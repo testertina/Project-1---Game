@@ -15,6 +15,12 @@ $(function() {
   			$("#gamepage").css("visibility", "visible");
   			var count = 0;
   			document.getElementById("pts").innerHTML = count;
+  			var outcome = "";
+
+
+  			// Hide outcome bar
+
+  			$("#outcome").css("visibility", "hidden");
 
   			// Spaceship needs to appear and rotate with cursor.
 
@@ -75,9 +81,11 @@ $(function() {
 
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+					outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  			});
   			};
 
@@ -87,9 +95,11 @@ $(function() {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+					outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  			});
   			};
 
@@ -99,9 +109,11 @@ $(function() {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+					outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  			});
   			};
 
@@ -111,9 +123,11 @@ $(function() {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+		  			outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  			});
   			};
 
@@ -123,9 +137,11 @@ $(function() {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+		  			outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 		  		});
   			};
 
@@ -135,9 +151,11 @@ $(function() {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+		  			outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  			});
   			};
 
@@ -147,9 +165,11 @@ $(function() {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+		  			outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  			});
   			};
 
@@ -159,9 +179,11 @@ $(function() {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+		  			outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  			});
   			};
 
@@ -171,9 +193,11 @@ $(function() {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+		  			outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  			});
   			};
 
@@ -183,9 +207,11 @@ $(function() {
 	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
 		  				$(x).remove();
-		  				alert("GAME OVER!");
 		  				return "Game Over!";
 		  			}, 1000);
+		  			outcome = "MISSION FAILED.";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  			});
   			};
 
@@ -198,11 +224,10 @@ $(function() {
 	  				beam("#beam");
 		  			$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 	  				setTimeout(function () {
-	  					addPoints();
+	  					addPoints();	// Points need to be updated.
   						$(x).stop().remove();
-	  					$(y).css("visibility", "visible");
-	  					
-	  					 // XP bar needs to increase
+	  					$(y).css("visibility", "visible");  // XP bar needs to increase
+	 
 					}, 1000);
 
 	  				var choice = Math.floor(Math.random() * 10);
@@ -249,10 +274,13 @@ $(function() {
 	  				beam("#beam");
 	  				$(z).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
 		  			setTimeout(function(){
-		  				$(y).css("visibility", "visible"); 
-		  				addPoints(); // XP bar needs to increase
+		  				$(y).css("visibility", "visible"); // XP bar needs to increase
+		  				addPoints(); // Points need to be updated.
 		  				$(z).stop().remove();
 		  			}, 1000);
+		  			outcome = "MISSION COMPLETE!";
+		  			document.getElementById("outcome").innerHTML = outcome;
+		  			$('#outcome').css("visibility", "visible");
 	  				
 	  			});
 	  		};
@@ -263,6 +291,8 @@ $(function() {
   				$(x).fadeIn(100);
   				$(x).fadeOut(100);
   			};
+
+  			// Function to add points when user clicks on an asteroid.
 
   			function addPoints () {
   				count = count + 5;
@@ -275,10 +305,6 @@ $(function() {
   			$("#quit").click(function (event) {
   				location.reload();
   			});
-
-
-
-  			
 
   			// To determine ships coordinates.
   			// $("#gamepage").click(function (event) {
