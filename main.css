@@ -4,6 +4,7 @@ body {
 	background-height: 100%;
 	text-align: center;
 	cursor: pointer;
+	overflow: hidden;
 
 }
 
