@@ -61,6 +61,7 @@ ul {
 
 	width: 1000px;
 	height: 700px;
+	margin-top: -150px;
 	margin-left: 200px;
 	background-image: url("https://media.giphy.com/media/peFJZc82UZ4iY/giphy.gif?response_id=5925650c4a83a33c59eec6c2");
 	background-size: cover;
@@ -181,15 +182,9 @@ p {
 }
 
 #ship {
-	/*margin: 550px 0px 0px 0px;*/
 	font-size: 80px;
 	position: absolute;
-	margin: 300px 0px 0px 500px;
-
-/*	background-color: grey;
-    width: 100px;
-    height: 30px;*/
-    
+	margin: 250px 0px 0px 500px;
     position: absolute;
 
 }

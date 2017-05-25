@@ -53,173 +53,123 @@ $(function() {
 
   			// Asteroids need to be hidden on page load.
 
-  			$("#a1").css("visibility", "hidden");
-  			$("#a2").css("visibility", "hidden");
-  			$("#a3").css("visibility", "hidden");
-  			$("#a4").css("visibility", "hidden");
-  			$("#a5").css("visibility", "hidden");
-  			$("#a6").css("visibility", "hidden");
+  			$("#a1, #a2, #a3, #a4, #a5, #a6").css("visibility", "hidden");
 
   			// XPs need to be hidden on load.
 
-  			$("#XP1").css("visibility", "hidden");
-  			$("#XP2").css("visibility", "hidden");
-  			$("#XP3").css("visibility", "hidden");
-  			$("#XP4").css("visibility", "hidden");
-  			$("#XP5").css("visibility", "hidden");
-  			$("#XP6").css("visibility", "hidden");
+  			$("#XP1, #XP2, #XP3, #XP4, #XP5, #XP6").css("visibility", "hidden");
 
   			// Asteroids need to move across the gamepage randomly. Asteroids are called here.
   			
-  			move("#a1");
+  			move3("#a1");
   			clickCheck("#a1", "#XP1", "#a2");
   			clickCheck("#a2", "#XP2", "#a3");
   			clickCheck("#a3", "#XP3", "#a4");
   			clickCheck("#a4", "#XP4", "#a5");
   			clickCheck("#a5", "#XP5", "#a6");
   			final("#XP6", '#a6');
+  			
 
-  			// Functions to make asteroids move in the first round. Using .animate. 10 functions for random movements.
+  			// Function to return gameover if player does not click on asteroid.
+
+	  		function gameOver () {
+		  		setTimeout(function () {
+					outcome = "MISSION FAILED";
+			  		document.getElementById("outcome").innerHTML = outcome;
+			  		$('#outcome').css("visibility", "visible");
+			  	}, 1000);
+			};
+
+			// Functions to make asteroids move in the first round. Using .animate. 10 functions for random movements.
+
+			function animatedAsteroidsHori (x, a, b, c) {
+				$(x).offset({top: a, right: b}).animate({left: c}, 10000, "linear", function () {
+		  			$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+		  			setTimeout(function () {
+				  		$(x).remove();
+				  	}, 1000);
+		  			gameOver();
+				});
+			}
+
+			function animatedAsteroidsHori2 (x, a, b, c) {
+				$(x).offset({top: a, left: b}).animate({left: c}, 10000, "linear", function () {
+		  			$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+		  			setTimeout(function () {
+				  		$(x).remove();
+				  	}, 1000);
+		  			gameOver();
+				});
+			}			
+
+			function animatedAsteroidsVert (x, a, b, c) {
+				$(x).offset({top: a, right: b}).animate({top: c}, 10000, "linear", function () {
+		  			$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+		  			setTimeout(function () {
+				  		$(x).remove();
+				  	}, 1000);
+		  			gameOver();
+				});
+			}
+
 
   			function move (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 400, right: 200}).animate({left:"400px"}, 10000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+  				animatedAsteroidsVert(x, 350, 200, "450px");
 
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-					outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-	  			});
   			};
 
   			function move2 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 700, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-					outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-	  			});
+  				animatedAsteroidsHori(x, 580, 210, "850px");
   			};
 
   			function move3 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 500, left: 1050}).animate({left:"500px"}, 10000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-					outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-	  			});
+  				animatedAsteroidsHori2(x, 200, 1000, "500px");
+
   			};
 
   			function move4 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 750, left: 300}).animate({top:"0px"}, 10000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-		  			outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-	  			});
+  				animatedAsteroidsHori2(x, 550, 1000, "0px");
+
   			};
 
   			function move5 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 500, left: 210}).animate({left:"450px"}, 10000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-		  			outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-		  		});
+  				animatedAsteroidsHori(x, 500, 210, "850px");
+
   			};
 
   			function move6 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 10000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-		  			outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-	  			});
+  				animatedAsteroidsVert(x, 100, 1050, "500px");
+
   			};
 
   			function move7 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 850, left: 830}).animate({top:"-25px"}, 10000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-		  			outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-	  			});
+  				animatedAsteroidsHori(x, 600, 1000, "850px");
+
   			};
 
   			function move8 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 650, left: 210}).animate({left:"850px"}, 10000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-		  			outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-	  			});
+  				animatedAsteroidsVert(x, 200, 210, "500px");
+
   			};
 
   			function move9 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 480, left: 1050}).animate({left:"500px"}, 10000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-		  			outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-	  			});
+  				animatedAsteroidsVert(x, 480, 1050, "0px");
+
   			};
 
   			function move10 (x) {
   				$(x).css("visibility", "visible");
-	  			$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 10000, "linear", function () {
-	  				$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
-	  				setTimeout(function () {
-		  				$(x).remove();
-		  				return "Game Over!";
-		  			}, 1000);
-		  			outcome = "MISSION FAILED";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-	  			});
+  				animatedAsteroidsHori2(x, 300, 1050, "500px");
+
   			};
 
 
@@ -286,13 +236,215 @@ $(function() {
 		  				$(z).stop().remove();
 		  			}, 1000);
 		  			setTimeout(function () {
-		  			outcome = "MISSION COMPLETE!";
-		  			document.getElementById("outcome").innerHTML = outcome;
-		  			$('#outcome').css("visibility", "visible");
-		  		}, 1500);
-	  				
+		  				outcome = "MISSION COMPLETE!";
+		  				document.getElementById("outcome").innerHTML = outcome;
+		  				$('#outcome').css("visibility", "visible");
+		  			}, 1500); 		
 	  			});
 	  		};
+
+	  		// Next round!
+
+	  		// function round2 (x, y, z) {
+	  		// 	$('#outcome').css("visibility", "hidden");
+		  	// 	moveTwo(x);
+		  	// 	clickCheck2(y, z)
+	  		// };
+
+	  		// // Round 2 move functions
+  			// function moveTwo (x) {
+  			// 	$('#outcome').css("visibility", "hidden");
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 400, right: 200}).animate({left:"400px"}, 10000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+					// outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+	  		// 	});
+  			// };
+
+  			// function move2Two (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 700, left: 210}).animate({left:"850px"}, 5000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+					// outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+	  		// 	});
+  			// };
+
+  			// function move3Two (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 500, left: 1050}).animate({left:"500px"}, 10000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+					// outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+	  		// 	});
+  			// };
+
+  			// function move4Two (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 750, left: 300}).animate({top:"0px"}, 10000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+		  	// 		outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+	  		// 	});
+  			// };
+
+  			// function move5Two (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 500, left: 210}).animate({left:"450px"}, 10000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+		  	// 		outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+		  	// 	});
+  			// };
+
+  			// function move6Two (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 10000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+		  	// 		outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+	  		// 	});
+  			// };
+
+  			// function move7Two (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 850, left: 830}).animate({top:"-25px"}, 10000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+		  	// 		outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+	  		// 	});
+  			// };
+
+  			// function move8Two (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 650, left: 210}).animate({left:"850px"}, 10000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+		  	// 		outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+	  		// 	});
+  			// };
+
+  			// function move9Two (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 480, left: 1050}).animate({left:"500px"}, 10000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+		  	// 		outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+	  		// 	});
+  			// };
+
+  			// function move10Two (x) {
+  			// 	$(x).css("visibility", "visible");
+	  		// 	$(x).offset({top: 300, left: 1050}).animate({left:"0px"}, 10000, "linear", function () {
+	  		// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+		  	// 			$(x).remove();
+		  	// 			return "Game Over!";
+		  	// 		}, 1000);
+		  	// 		outcome = "MISSION FAILED";
+		  	// 		document.getElementById("outcome").innerHTML = outcome;
+		  	// 		$('#outcome').css("visibility", "visible");
+	  		// 	});
+  			// };
+
+	  		// // Round 2 clickCheck function
+
+
+  			// function clickCheck2 (x, y, z) {
+
+	  		// 	$(x).click(function (event) {
+	  		// 		beam("#beam");
+		  	// 		$(x).attr("src", "https://media.giphy.com/media/d4aVHC1HKnButuXC/giphy.gif");
+	  		// 		setTimeout(function () {
+	  		// 			addPoints();	// Points need to be updated.
+  			// 			$(x).stop().remove();
+	  		// 			$(y).css("visibility", "visible");  // XP bar needs to increase
+	 
+					// }, 1000);
+
+	  		// 		var choice = Math.floor(Math.random() * 10);
+
+	  		// 		if (choice === 0) {
+	  		// 			moveTwo(z);
+	  		// 			return choice;
+	  		// 		} else if (choice === 1) {
+	  		// 			move2Two(z);
+	  		// 			return choice;
+	  		// 		} else if (choice === 2) {
+	  		// 			move3Two(z);
+	  		// 			return choice;
+	  		// 		} else if (choice === 3) {
+	  		// 			move4Two(z);
+	  		// 			return choice;
+	  		// 		} else if (choice === 4) {
+	  		// 			move5Two(z);
+	  		// 			return choice;
+	  		// 		} else if (choice === 5) {
+	  		// 			move6Two(z);
+	  		// 			return choice;
+	  		// 		} else if (choice === 6) {
+	  		// 			move7Two(z);
+	  		// 			return choice;
+	  		// 		} else if (choice === 7) {
+	  		// 			move8Two(z);
+	  		// 			return choice;
+	  		// 		} else if (choice === 8) {
+	  		// 			move9Two(z);
+	  		// 			return choice;
+	  		// 		} else {
+	  		// 			move10Two(z);
+	  		// 			return choice;
+	  		// 		} 
+
+	  		// 	});
+	  		// };
 
 	  		// Need a function beam, which displays the laser beam when the player clicks.
 
@@ -318,13 +470,6 @@ $(function() {
   			$("#quit").click(function (event) {
   				location.reload();
   			});
-
-  			// To determine ships coordinates.
-  			// $("#gamepage").click(function (event) {
-  			// 	var ship = event.pageX + ' , ' + event.pageY;
-  			// 	console.log(ship);
-  				
-  			// })
 
   		});
 
