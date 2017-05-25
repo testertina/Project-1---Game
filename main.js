@@ -3,10 +3,8 @@
 $(function() {
 	console.log("DOM ready");
 
-	// Hide gamepage, instructions and leaderboard.
-	$("#gamepage").css("visibility", "hidden");
-	$("#instructions").css("visibility", "hidden");
-	$("#scoreboard").css("visibility", "hidden");
+	// Hide gamepage and instructions.
+	$("#gamepage, #instructions").css("visibility", "hidden");
 
 	// Click event to begin game. Upon click of "begin game" button the gamepage becomes visible.
 	$("#beginGame").click(function (event) {
@@ -17,7 +15,6 @@ $(function() {
   			var count = 0;
   			document.getElementById("pts").innerHTML = count;
   			var outcome = "";
-
 
   			// Hide outcome bar
 
