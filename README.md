@@ -107,7 +107,7 @@ Instructions
 Leaderboard
 
 * Append: Array containing inputted user names and corresponding scores. (Array)
-* event handler back to homepage button (div). 
+* Event handler back to homepage button (div). 
 
 
 ## Progress
@@ -130,49 +130,72 @@ The pages can be hidden upon page load using .css("visibility", "hidden").
 
 The functionality is to have the homepage disappear upon click of the "begin game" button on the homepage, and then have the gamepage appear.  This is achieved by .click method in jquery on the "begin game" button, to change the visibiiity of the homepage div to hidden and the visibility of the gamepage to visible.
 
-* The asteroids should not be visibile upon load of the gamepage.
+* Fifth step: The asteroids should not be visibile upon load of the gamepage.
 
 The asteroids can be hidden upon page load using .css("visibility", "hidden").
 
-* Need to create an outcome div within the gamepage that will become visible upon either losing or winning the game.  
+* Sixth step: Need to create an outcome div within the gamepage that will become visible upon either losing or winning the game.  
 
 Created a div in gamepage div. Set to hidden using css upon load of the gamepage. 
 
-* The asteroids need to move randomly across the gamepage section.
+* Seventh step: The asteroids need to move randomly across the gamepage section.
 
 Create a functions "moveX(asteroid id)" (X from 1 to 10), which make the chosen asteroid visible and then move the asteroid from their initial start position (chosen by .offset) to their desired position using .animate().  If the asteroid reached its final position then the game is over. Make var outcome equal to "Mission Failed", and change the innerHTML element of the outcome div to outcome.
 
 Use Math.floor and Math.random to generate a random number from 0 to 9. Then use an if statement to assign a number to a function, if that number is chosen then run its assigned move function.
 
-* The asteroids need to explode once the player clicks on them.
+* Eighth step: The asteroids need to explode once the player clicks on them.
 
 Use a .click method on the asteroids by assigning each asteroid an id, upon the click use .stop() to stop the animation and .remove() to remove the asteroid.  Within this function the random move function is called to get the next asteroid moving.
 
-* Need a final clickCheck function to check when the final asteroid is clicked and print outcome of the game to screen.
+* Ninth step: Need a final clickCheck function to check when the final asteroid is clicked and print outcome of the game to screen.
 
 Use a .click method with .remove and .stop but this time do not call another move function.  Instead chnaged the innerHTML element of the outcome div to "MISSION SUCCESSFUL!".
 Tests
 
-* Need to make the pointer of the ship follow the mouse pointer.
+* Tenth step: Need to make the pointer of the ship follow the mouse pointer.
 
 Use .mousemove element with .eventY and eventX to determine co ordinates of the mouse pointer.  Take away the corodinates of the center of the ship.  Use the arctan2 function to determine the angle of movement.  Use .css transform with rotate to rotate the ship by the calculated angle.
 
-* Would like to add a laser beam.
+* Eleventh step: Would like to add a laser beam.
 
 Created a div within the ship div and styled it in CSS to look like a beam. Made its visibility hidden at first and onclick it fades in and fades out.
 
-Describe and show how to run the tests with code examples.
+* Twelveth step: Would like to add XP bar.
 
-##Contributors
+Created a div within the gamepage div and styled it in CSS to look like a bar. 
 
-Ollie Holden, Niall Wallace, SDET-8, WebDev4.
+Created mini divs to act as XP points within the gamepage div.  They are hidden at first and become visible once the player destroys an asteroid.
+
+* Thirteenth step: Would like to add points.
+
+Created a div within the gamepage section containing a variable count.  In JS used .getElementById.innerHTML to replace the variable count to count plus one.
+
+## Access the game
+
+Tina Rocks is a browser based game and can be accessed via the following link:
+
+https://tgohil04.github.io/Project-1---Game/
+
+### To download from GitHub
+
+To download the game from github use the following command in terminal:
+
+``` git clone git@github.com:tgohil04/Project-1---Game.git ```
+
+Open the html file, right click and open in browser.
+
+
+## Contributors
+
+Ollie Holden, Niall Wallace, Kieran Cornwall, SDET-8, WebDev4.
 
 ## References
 
-Asteroid photo
+Asteroids: http://img05.deviantart.net/e95b/i/2009/184/4/2/asteroid_pack_i_by_archang3lzz.png.
 
-star trek theme
+Background music: Star Trek Voyager Theme, Author: Azure-sky, Newgrounds, Sep 8, 2010, http://www.newgrounds.com/audio/listen/361098.
 
-pew pew
+Laser sound: Shoot_00.wav, Author: LittleRobotSoundFactory, Freesound, April 14th, 2015, https://www.freesound.org/people/LittleRobotSoundFactory/sounds/270344/.
 
-background gif
+Gamepage background gif: http://tj-panther.tumblr.com/post/62673278102.
