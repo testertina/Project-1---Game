@@ -1,7 +1,7 @@
 // Load JS to webpage.
 
 $(function() {
-	console.log("DOM ready");
+	// console.log("DOM ready");
 
 	// Hide gamepage and instructions.
 	$("#gamepage, #instructions").css("visibility", "hidden");
@@ -30,7 +30,7 @@ $(function() {
   				// console.log(event.pageX);
   				var radAngle = Math.atan2((e.pageX - shipCenter[0]),-(e.pageY - shipCenter[1]));
  				var degAngle = (radAngle * (180 / (Math.PI)));
- 				console.log(degAngle);
+ 				// console.log(degAngle);
 	  			$("#ship").css({'transform' : 'rotate('+ (degAngle) +'deg)'});
 			});
 
